@@ -32,7 +32,7 @@ Build a mobile-first PWA that serves as a personal city discovery journal for sy
 |---|---|
 | **MapView** | Renders the interactive map with spot markers, user location, district boundaries, and route overlays |
 | **SpotManager** | Handles all spot CRUD operations — creating, reading, updating, deleting spots with their full metadata |
-| **PhotoService** | Captures photos from camera, uploads to cloud storage, retrieves optimized images for display |
+| **PhotoService** | Captures photos from camera, uploads to Supabase Storage, retrieves public URLs for display |
 | **SearchEngine** | Filters and queries spots by district, category, rating, text, and geographic proximity |
 | **RoutePlanner** | Calculates walking routes between selected spots and displays them on the map |
 | **DistrictTracker** | Tracks exploration progress per district — visited status, spot count, coverage stats |
@@ -55,7 +55,7 @@ graph TD
     SpotManager --> PhotoService
     SpotManager --> MapView
 
-    PhotoService --> CloudflareR2[Cloudflare R2 + Images]
+    PhotoService --> SupaStorage[Supabase Storage]
 
     SearchEngine --> DataStore
     SearchEngine --> MapView
@@ -86,8 +86,8 @@ graph TD
 - **MapView <-> DataStore**: Supabase JS client fetches spot GeoJSON; MapView renders as MapLibre GL JS markers/layers
 - **MapView <-> OfflineCache**: Service worker intercepts tile requests; PMTiles serve cached vector tiles from IndexedDB when offline
 - **SpotManager <-> DataStore**: Supabase `INSERT/UPDATE/DELETE` on `spots` table with PostGIS `GEOGRAPHY(POINT)` column
-- **SpotManager <-> PhotoService**: After photo capture, PhotoService uploads to R2 and returns URL; SpotManager stores URL in spot record
-- **PhotoService <-> Cloudflare R2**: S3-compatible API for upload; Cloudflare Images URL pattern for on-demand resize/WebP transforms
+- **SpotManager <-> PhotoService**: After photo capture, PhotoService uploads to Supabase Storage and returns public URL; SpotManager stores URL in spot record
+- **PhotoService <-> Supabase Storage**: Upload via Supabase JS SDK to `spot-photos` bucket; serve via public CDN URL
 - **SearchEngine <-> DataStore**: PostGIS spatial queries — `ST_DWithin()` for radius search, `<->` for nearest-neighbor, plus standard SQL filters
 - **RoutePlanner <-> Mapbox Directions API**: REST API call with waypoints (lat/lng pairs), returns GeoJSON polyline for walking route
 - **RoutePlanner <-> MapView**: GeoJSON route line rendered as MapLibre GL JS layer overlay

@@ -44,11 +44,10 @@
 
 ### Cache
 **Role**: Platform & Infra Engineer
-**Focus**: Cloud storage, offline sync, PWA, service workers
+**Focus**: Storage, offline sync, PWA, service workers
 **Skills**:
-- Cloudflare R2 (S3-compatible object storage)
-- Cloudflare Images (on-demand transforms)
-- Presigned URL flows
+- Supabase Storage (bucket management, RLS, CDN URLs)
+- Client-side image processing (Canvas API, compression, variants)
 - Serwist / Workbox (service worker tooling)
 - IndexedDB (idb library)
 - Offline-first architecture (mutation queues, background sync)

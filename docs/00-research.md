@@ -13,7 +13,7 @@ Build a personal city discovery tool for systematically exploring San Francisco 
 | **Supabase + PostGIS** (Database) | Managed PostgreSQL with PostGIS extension enabled via dashboard toggle [cite:5]. Free tier includes 500MB database storage [cite:6]. Native spatial queries: `ST_DWithin()` for radius search, `<->` operator for nearest-neighbor sorting [cite:5]. GIST spatial indexing for fast geospatial queries [cite:5]. Built-in REST API and JS client eliminates need for custom backend [cite:6]. pgRouting extension available for graph-based routing within the database [cite:7]. |
 | **Next.js** (PWA Framework) | SSR/SSG capabilities for SEO when sharing district guides [cite:8]. PWA support via `next-pwa` or Serwist plugin with Workbox-based service worker caching [cite:9]. React ecosystem provides largest selection of map integration libraries [cite:8]. |
 | **Mapbox Directions API** (Route Planning) | 100,000 free walking route requests/month [cite:10]. Walking profile follows sidewalks and trails [cite:10]. Easy integration with MapLibre GL JS maps. Alternative: self-hosted Valhalla for elevation-aware routing with per-request costing adjustments (prefer parks, avoid stairs) at zero API cost [cite:11]. |
-| **Cloudflare R2 + Images** (Photo Storage) | Zero egress fees — critical for image-heavy map browsing [cite:12]. 10GB free storage, $0.015/GB-month after [cite:12]. On-demand image transforms via URL pattern (resize, WebP conversion, quality) with 5,000 free unique transforms/month [cite:13]. Global CDN caching at Cloudflare edge [cite:12]. |
+| **Supabase Storage** (Photo Storage) | Included in Supabase free tier — 1GB storage, 2GB bandwidth [cite:6]. Built-in auth integration with RLS policies for access control. Direct upload from client via Supabase JS SDK — no presigned URL flow needed. CDN-cached public URLs for serving images. Client-side compression before upload keeps files small. |
 | **Browser Geolocation API** (Location) | `watchPosition()` provides continuous location updates with 5-15 meter accuracy using GPS + Wi-Fi hybrid [cite:14]. Works in all modern browsers over HTTPS [cite:15]. Screen Wake Lock API (iOS 18.4+, Chrome, Edge) keeps screen on during active navigation [cite:16]. Key limitation: no background tracking when screen is off — acceptable for active walking discovery [cite:16]. |
 | **PMTiles + Service Worker + IndexedDB** (Offline) | PMTiles stores vector tiles as a single file accessible via HTTP range requests [cite:3]. Service Worker (Workbox) caches app shell and static assets with CacheFirst strategy [cite:9]. IndexedDB caches geospatial spot data for offline querying [cite:9]. Enables full offline map browsing during walks in areas with poor signal. |
 
@@ -44,6 +44,5 @@ Build a personal city discovery tool for systematically exploring San Francisco 
 | MapTiler tiles | 5K sessions/mo | $25/mo Flex |
 | Supabase | 500MB DB, 1GB storage, 2GB egress | $25/mo Pro |
 | Mapbox Directions | 100K requests/mo | $2/1K requests |
-| Cloudflare R2 | 10GB storage, zero egress | $0.015/GB-mo |
-| Cloudflare Images | 5K transforms/mo | $0.50/1K |
+| Supabase Storage | 1GB storage, 2GB bandwidth | Included in Pro ($25/mo) |
 | **Total monthly cost** | **$0** (within free tiers) | |

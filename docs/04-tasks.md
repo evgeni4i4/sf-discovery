@@ -21,11 +21,10 @@
   - [ ] 2.7 Add auth UI: sign-in page and session provider in root layout
   - _Requirements: 9.1, 9.2, 9.3, 9.4_
 
-- [ ] 3. Set up Cloudflare R2 and PhotoService
-  - [ ] 3.1 Create Cloudflare R2 bucket for photo storage
-  - [ ] 3.2 Create Supabase Edge Function to generate presigned PUT URLs for R2
-  - [ ] 3.3 Implement `src/lib/photo-service.ts` — `capturePhoto()`, `uploadPhoto()` (client-side compress + presigned upload), `getThumbnailUrl()`, `getFullUrl()`, `deletePhotos()`
-  - [ ] 3.4 Configure Cloudflare Images transform rules for the R2 bucket
+- [ ] 3. Set up Supabase Storage and PhotoService
+  - [ ] 3.1 Create `spot-photos` public bucket in Supabase Storage with RLS policies
+  - [ ] 3.2 Implement `src/lib/photo-service.ts` — `capturePhoto()`, `uploadPhoto()` (client-side compress + Supabase upload), `getThumbnailUrl()`, `getFullUrl()`, `deletePhotos()`
+  - [ ] 3.3 Implement client-side image variants — generate thumbnail (400px) and full-size (1200px) before upload
   - _Requirements: 3.2, 3.3, 3.4, 3.6_
 
 ## Phase 2: Core Map Experience

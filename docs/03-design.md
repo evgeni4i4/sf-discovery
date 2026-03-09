@@ -207,7 +207,7 @@ function useSpots(): {
 
 ### Component: PhotoService
 
-**Purpose**: Captures photos, uploads to Cloudflare R2, generates optimized URLs
+**Purpose**: Captures photos, uploads to Supabase Storage, retrieves public URLs
 **Location**: `src/lib/photo-service.ts` + `src/components/photos/PhotoCapture.tsx`
 
 ```typescript
@@ -217,26 +217,27 @@ interface PhotoService {
   capturePhoto(): Promise<File>;
 
   // Req 3.2: Compress client-side (canvas resize to max 2048px, quality 0.8, <= 2MB)
-  // Upload to R2 via presigned URL from Supabase Edge Function
+  // Upload to Supabase Storage bucket "spot-photos"
   uploadPhoto(file: File, spotId: string): Promise<string>;
 
-  // Req 3.3: Thumbnail URL pattern
-  // https://{domain}/cdn-cgi/image/width=400,quality=75,format=webp/{r2-path}
-  getThumbnailUrl(photoUrl: string): string;
+  // Req 3.3: Thumbnail — compress client-side to 400px wide before upload
+  // Store as separate file: spot-photos/{spotId}/thumb_{filename}
+  getThumbnailUrl(photoPath: string): string;
 
-  // Req 3.4: Full-size URL pattern
-  // https://{domain}/cdn-cgi/image/width=1200,quality=80,format=webp/{r2-path}
-  getFullUrl(photoUrl: string): string;
+  // Req 3.4: Full-size — compress client-side to 1200px wide before upload
+  // Store as: spot-photos/{spotId}/{filename}
+  getFullUrl(photoPath: string): string;
 
-  // Req 3.6: Delete all photos for a spot from R2
-  deletePhotos(photoUrls: string[]): Promise<void>;
+  // Req 3.6: Delete all photos for a spot from Supabase Storage
+  deletePhotos(photoPaths: string[]): Promise<void>;
 }
 
-// R2 upload flow:
-// 1. Client requests presigned PUT URL from Supabase Edge Function
-// 2. Edge Function generates presigned URL using R2 S3 API
-// 3. Client uploads directly to R2 via presigned URL
-// 4. Client stores the R2 object key in spot.photo_urls
+// Supabase Storage upload flow:
+// 1. Client compresses image (canvas resize + quality reduction)
+// 2. Client generates thumbnail (400px) and full-size (1200px) variants
+// 3. Client uploads both to Supabase Storage via supabase.storage.from('spot-photos').upload()
+// 4. Client stores the public URL path in spot.photo_urls
+// 5. Public bucket — images served via Supabase CDN URL
 ```
 
 ### Component: SearchEngine
