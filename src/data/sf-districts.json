@@ -1,0 +1,285 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "Mission" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-122.4280, 37.7700],
+          [-122.4280, 37.7490],
+          [-122.4050, 37.7490],
+          [-122.4050, 37.7700],
+          [-122.4280, 37.7700]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Castro" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-122.4450, 37.7700],
+          [-122.4450, 37.7590],
+          [-122.4280, 37.7590],
+          [-122.4280, 37.7700],
+          [-122.4450, 37.7700]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Haight-Ashbury" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-122.4570, 37.7750],
+          [-122.4570, 37.7680],
+          [-122.4380, 37.7680],
+          [-122.4380, 37.7750],
+          [-122.4570, 37.7750]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Marina" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-122.4480, 37.8060],
+          [-122.4480, 37.7970],
+          [-122.4280, 37.7970],
+          [-122.4280, 37.8060],
+          [-122.4480, 37.8060]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "North Beach" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-122.4180, 37.8060],
+          [-122.4180, 37.7960],
+          [-122.4050, 37.7960],
+          [-122.4050, 37.8060],
+          [-122.4180, 37.8060]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Chinatown" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-122.4110, 37.7970],
+          [-122.4110, 37.7920],
+          [-122.4040, 37.7920],
+          [-122.4040, 37.7970],
+          [-122.4110, 37.7970]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Financial District" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-122.4040, 37.7970],
+          [-122.4040, 37.7880],
+          [-122.3920, 37.7880],
+          [-122.3920, 37.7970],
+          [-122.4040, 37.7970]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "SoMa" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-122.4140, 37.7880],
+          [-122.4140, 37.7720],
+          [-122.3870, 37.7720],
+          [-122.3870, 37.7880],
+          [-122.4140, 37.7880]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Nob Hill" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-122.4200, 37.7960],
+          [-122.4200, 37.7890],
+          [-122.4110, 37.7890],
+          [-122.4110, 37.7960],
+          [-122.4200, 37.7960]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Russian Hill" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-122.4260, 37.8030],
+          [-122.4260, 37.7950],
+          [-122.4140, 37.7950],
+          [-122.4140, 37.8030],
+          [-122.4260, 37.8030]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Pacific Heights" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-122.4450, 37.7970],
+          [-122.4450, 37.7880],
+          [-122.4260, 37.7880],
+          [-122.4260, 37.7970],
+          [-122.4450, 37.7970]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Tenderloin" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-122.4190, 37.7880],
+          [-122.4190, 37.7810],
+          [-122.4090, 37.7810],
+          [-122.4090, 37.7880],
+          [-122.4190, 37.7880]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Hayes Valley" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-122.4310, 37.7810],
+          [-122.4310, 37.7730],
+          [-122.4190, 37.7730],
+          [-122.4190, 37.7810],
+          [-122.4310, 37.7810]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Sunset" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-122.5100, 37.7660],
+          [-122.5100, 37.7380],
+          [-122.4570, 37.7380],
+          [-122.4570, 37.7660],
+          [-122.5100, 37.7660]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Richmond" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-122.5100, 37.7880],
+          [-122.5100, 37.7720],
+          [-122.4570, 37.7720],
+          [-122.4570, 37.7880],
+          [-122.5100, 37.7880]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Potrero Hill" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-122.4050, 37.7700],
+          [-122.4050, 37.7560],
+          [-122.3870, 37.7560],
+          [-122.3870, 37.7700],
+          [-122.4050, 37.7700]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Dogpatch" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-122.3970, 37.7610],
+          [-122.3970, 37.7520],
+          [-122.3830, 37.7520],
+          [-122.3830, 37.7610],
+          [-122.3970, 37.7610]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Bayview" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-122.4000, 37.7490],
+          [-122.4000, 37.7260],
+          [-122.3700, 37.7260],
+          [-122.3700, 37.7490],
+          [-122.4000, 37.7490]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Excelsior" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-122.4350, 37.7300],
+          [-122.4350, 37.7110],
+          [-122.4100, 37.7110],
+          [-122.4100, 37.7300],
+          [-122.4350, 37.7300]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Noe Valley" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-122.4380, 37.7590],
+          [-122.4380, 37.7460],
+          [-122.4230, 37.7460],
+          [-122.4230, 37.7590],
+          [-122.4380, 37.7590]
+        ]]
+      }
+    }
+  ]
+}
